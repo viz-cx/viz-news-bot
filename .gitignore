@@ -1,3 +1,9 @@
+.env
+.vscode/
+database/
+__debug_bin
+viz-news-bot
+
 # Binaries for programs and plugins
 *.exe
 *.exe~
