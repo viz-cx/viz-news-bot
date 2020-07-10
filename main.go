@@ -9,11 +9,11 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/VIZ-Blockchain/viz-go-lib"
+	"github.com/VIZ-Blockchain/viz-go-lib/operations"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api"
 	_ "github.com/joho/godotenv/autoload"
 	"github.com/syndtr/goleveldb/leveldb"
-	"github.com/viz-cx/viz-go-lib"
-	"github.com/viz-cx/viz-go-lib/operations"
 )
 
 func main() {
