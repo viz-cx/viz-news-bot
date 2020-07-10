@@ -1,0 +1,58 @@
+# github.com/VIZ-Blockchain/viz-go-lib v0.0.0-20200311103305-45d1461afdec
+## explicit
+github.com/VIZ-Blockchain/viz-go-lib/api
+github.com/VIZ-Blockchain/viz-go-lib/encoding/transaction
+github.com/VIZ-Blockchain/viz-go-lib/encoding/wif
+github.com/VIZ-Blockchain/viz-go-lib/operations
+github.com/VIZ-Blockchain/viz-go-lib/transactions
+github.com/VIZ-Blockchain/viz-go-lib/transactions/rfc6979
+github.com/VIZ-Blockchain/viz-go-lib/transports
+github.com/VIZ-Blockchain/viz-go-lib/transports/http
+github.com/VIZ-Blockchain/viz-go-lib/transports/websocket
+github.com/VIZ-Blockchain/viz-go-lib/types
+# github.com/btcsuite/btcd v0.20.1-beta
+github.com/btcsuite/btcd/btcec
+github.com/btcsuite/btcd/chaincfg
+github.com/btcsuite/btcd/chaincfg/chainhash
+github.com/btcsuite/btcd/wire
+# github.com/btcsuite/btcutil v1.0.2
+## explicit
+github.com/btcsuite/btcutil
+github.com/btcsuite/btcutil/base58
+github.com/btcsuite/btcutil/bech32
+# github.com/go-telegram-bot-api/telegram-bot-api v4.6.4+incompatible
+## explicit
+github.com/go-telegram-bot-api/telegram-bot-api
+# github.com/golang/snappy v0.0.0-20180518054509-2e65f85255db
+github.com/golang/snappy
+# github.com/gorilla/websocket v1.4.2
+## explicit
+github.com/gorilla/websocket
+# github.com/joho/godotenv v1.3.0
+## explicit
+github.com/joho/godotenv
+github.com/joho/godotenv/autoload
+# github.com/syndtr/goleveldb v1.0.0
+## explicit
+github.com/syndtr/goleveldb/leveldb
+github.com/syndtr/goleveldb/leveldb/cache
+github.com/syndtr/goleveldb/leveldb/comparer
+github.com/syndtr/goleveldb/leveldb/errors
+github.com/syndtr/goleveldb/leveldb/filter
+github.com/syndtr/goleveldb/leveldb/iterator
+github.com/syndtr/goleveldb/leveldb/journal
+github.com/syndtr/goleveldb/leveldb/memdb
+github.com/syndtr/goleveldb/leveldb/opt
+github.com/syndtr/goleveldb/leveldb/storage
+github.com/syndtr/goleveldb/leveldb/table
+github.com/syndtr/goleveldb/leveldb/util
+# github.com/technoweenie/multipartstreamer v1.0.1
+## explicit
+github.com/technoweenie/multipartstreamer
+# github.com/viz-cx/viz-go-lib v0.0.0-20200709185020-8e6045b8cae3
+## explicit
+github.com/viz-cx/viz-go-lib
+github.com/viz-cx/viz-go-lib/operations
+# golang.org/x/crypto v0.0.0-20200709230013-948cd5f35899
+## explicit
+golang.org/x/crypto/ripemd160
