@@ -7,6 +7,7 @@ import (
 	"os"
 	"regexp"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/VIZ-Blockchain/viz-go-lib"
@@ -107,7 +108,11 @@ func saveChannel(db *leveldb.DB, bot *tgbotapi.BotAPI, channel string) error {
 		return err
 	}
 
-	text := randomEmoji() + " Новый #канал с ботом: \n\n" + c.Title + " — @" + c.UserName + "\n\n *** \n\n" + c.Description + "\n\n ***"
+	var description = ""
+	if strings.TrimSpace(c.Description) != "" {
+		description = "\n\n *** \n\n" + c.Description + "\n\n ***"
+	}
+	text := randomEmoji() + " Новый #канал с ботом: \n\n" + c.Title + " — @" + c.UserName + description
 	msg := tgbotapi.NewMessageToChannel(os.Getenv("TELEGRAM_CHANNEL"), text)
 	_, err = bot.Send(msg)
 	return err
