@@ -14,25 +14,22 @@ import (
 	"github.com/VIZ-Blockchain/viz-go-lib/operations"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api"
 	_ "github.com/joho/godotenv/autoload"
-	"github.com/syndtr/goleveldb/leveldb"
 )
 
 func main() {
-	db, err := leveldb.OpenFile(os.Getenv("DB_PATH"), nil)
-	defer db.Close()
 
 	bot, err := tgbotapi.NewBotAPI(os.Getenv("TELEGRAM_BOT_TOKEN"))
 	if err != nil {
 		log.Panic(err)
 	}
 
-	err = start(db, bot)
+	err = start(bot)
 	if err != nil {
 		log.Panic(err)
 	}
 }
 
-func start(db *leveldb.DB, bot *tgbotapi.BotAPI) error {
+func start(bot *tgbotapi.BotAPI) error {
 	cls, _ := viz.NewClient(os.Getenv("VIZ_NODE"))
 	defer cls.Close()
 
@@ -67,7 +64,7 @@ func start(db *leveldb.DB, bot *tgbotapi.BotAPI) error {
 					case *operations.AwardOperation:
 						channel := getChannel(op.Memo)
 						if channel != "" {
-							err = saveChannel(db, bot, channel)
+							err = saveChannel(bot, channel)
 							if err != nil {
 								log.Println(err)
 							}
@@ -94,15 +91,8 @@ func getChannel(str string) string {
 	return ""
 }
 
-func saveChannel(db *leveldb.DB, bot *tgbotapi.BotAPI, channel string) error {
-	data, _ := db.Get([]byte(channel), nil)
-	if data != nil {
-		return nil // already saved
-	}
-	err := db.Put([]byte(channel), []byte("true"), nil)
-	if err != nil {
-		return err
-	}
+func saveChannel(bot *tgbotapi.BotAPI, channel string) error {
+
 	c, err := bot.GetChat(tgbotapi.ChatConfig{SuperGroupUsername: channel})
 	if err != nil {
 		return err
